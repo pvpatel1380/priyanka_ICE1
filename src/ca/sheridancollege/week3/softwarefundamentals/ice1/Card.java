@@ -20,6 +20,23 @@ public class Card {
    private int value;//1-13
 
    public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
+
+    Card(String string, int i) 
+    {
+        setSuit(string);
+        setValue(i);
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Card() 
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Card(int userSuit, int userValue) 
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     /**
      * @return the suit
      */
@@ -44,10 +61,21 @@ public class Card {
     /**
      * @param value the value to set
      */
-    public void setValue(int value) {
+    public void setValue(int value)
+    {
         this.value = value;
     }
    
+    public String toString()
+    {
+	return(suit + " " + value);
+    }
+	
+    public boolean equals (Object obj)
+    {
+	Card c  = (Card) obj;
+	return (this.getSuit() == c.getSuit() && this.getValue() == c.getValue()  );
+    }
    
     
 }
